@@ -1,0 +1,97 @@
+/* Apply the Inter font globally */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Keyframe animation for a subtle fade-in from top effect */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe animation for a simple fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in-down animation to elements with this class */
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Apply the fade-in animation to elements with this class */
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Custom styles for the navigation toggle on smaller screens */
+/* Hide the checkbox input visually */
+.nav-toggle {
+    display: none;
+}
+
+/* Default state for navigation links: hidden on small screens */
+.nav-links {
+    display: none; /* Hidden by default on mobile */
+}
+
+/* Show the hamburger icon label on screens smaller than md (768px) */
+.nav-toggle-label {
+    display: none; /* Hidden by default on larger screens */
+}
+
+/* Media query for screens smaller than 768px (md breakpoint in Tailwind) */
+@media (max-width: 767px) {
+    /* Show the hamburger icon label */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 0.375rem; /* rounded-md */
+        transition: background-color 0.3s ease;
+    }
+    .nav-toggle-label:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+    }
+
+    /* When the nav-toggle checkbox is checked, display the nav links */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex; /* Make them visible */
+        flex-direction: column; /* Stack them vertically */
+        position: absolute; /* Position them absolutely below the header */
+        top: 64px; /* Adjust based on header height (p-4 in header makes it 64px tall approx) */
+        left: 0;
+        width: 100%; /* Take full full-width */
+        background-color: #1a202c; /* Dark background for the dropdown */
+        padding: 1rem;
+        z-index: 10; /* Ensure it's above other content */
+        border-radius: 0 0 0.5rem 0.5rem; /* Rounded bottom corners */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow */
+    }
+
+    /* Style individual links in the mobile menu */
+    .nav-toggle:checked ~ .nav-links li {
+        margin-bottom: 0.75rem; /* Space between links */
+    }
+    .nav-toggle:checked ~ .nav-links li:last-child {
+        margin-bottom: 0; /* No margin for the last link */
+    }
+}
+
+/* Ensure nav links are always displayed on medium and larger screens */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex !important; /* Override display: none from smaller screens */
+    }
+}
