@@ -35,9 +35,5 @@ This project is a simple, clean, and responsive landing page built as part of th
     ```
 3.  **Open `index.html`:**
     * You can simply double-click the `index.html` file in your file explorer.
-    * **Recommended (for development):** Use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code. Right-click `index.html` in VS Code and select "Open with Live Server".
+    * **Recommended (for development):**
 
-## Live Demo
-
-* [View the Live Landing Page Here](https://nagula-lahari.github.io/Elevate-lab-task/)
-    * *(Note: This link will work once you enable GitHub Pages for your repository, which is an optional extra step for live hosting. If you don't do this, users can still view the code by cloning the repo.)*
